@@ -11,3 +11,6 @@ NOT RELEASED, IN DEVELOPMENT
 
 ## Discussion
 https://discord.gg/rNrh5kW8Ty
+
+## Credits
+The structure of the multi-loader support is based off the structure of the Simple Voice Chat mod/plugin. 

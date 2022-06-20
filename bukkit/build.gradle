@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.0"
+}
+
+sourceCompatibility = JavaLanguageVersion.of(java_version as int)
+targetCompatibility = JavaLanguageVersion.of(java_version as int)
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://papermc.io/repo/repository/maven-public/" }
+    maven { url "https://libraries.minecraft.net/" }
+    maven { url "https://maven.enginehub.org/repo/" }
+}
+
+archivesBaseName = archives_base_name
+version = mod_version
+group = maven_group
+
+dependencies {
+    implementation "org.spigotmc:spigot-api:${bukkit_version}"
+    implementation "io.netty:netty-all:4.1.68.Final"
+    implementation "com.sk89q.worldguard:worldguard-bukkit:7.0.7"
+    implementation "com.comphenix.protocol:ProtocolLib:4.7.0"
+}

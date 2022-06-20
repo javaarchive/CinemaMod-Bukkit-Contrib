@@ -1,0 +1,7 @@
+task buildBukkit(type: GradleBuild) {
+    group = 'cinemamod'
+    tasks = [
+            ':bukkit:clean',
+            ':bukkit:build'
+    ]
+}
