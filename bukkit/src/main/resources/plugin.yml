@@ -1,4 +1,4 @@
-main: com.cinemamod.bukkit.CinemaModPlugin
+main: com.cinemamod.CinemaModPlugin
 name: cinemamod
 version: ${version}
 api-version: 1.18
