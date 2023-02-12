@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MySQLVideoStorage extends GenericSQLVideoStorage {
+public class MySQLDriver implements SQLDriver {
 
     private final String host;
     private final int port;
@@ -14,20 +14,16 @@ public class MySQLVideoStorage extends GenericSQLVideoStorage {
     private final String username;
     private final String password;
 
-    public MySQLVideoStorage(CinemaModConfig config) throws SQLException {
+    public MySQLDriver(CinemaModConfig config) {
         this.host = config.mysqlHost;
         this.port = config.mysqlPort;
         this.database = config.mysqlDatabase;
         this.username = config.mysqlUsername;
         this.password = config.mysqlPassword;
-
-        try (Connection connection = createConnection()) {
-            createTables(connection);
-        }
     }
 
     @Override
-    protected Connection createConnection() throws SQLException {
+    public Connection createConnection() throws SQLException {
         String jdbcUrl = "jdbc:mysql://" + host + ":" + port + "/" + database;
         return DriverManager.getConnection(jdbcUrl, username, password);
     }
